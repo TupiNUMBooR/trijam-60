@@ -9,6 +9,7 @@ namespace Thunder.Enemy
         public float delay = 1;
         float _nextAttack;
         public float damage = .3f;
+        public AudioSource attackSound;
 
         void OnTriggerEnter(Collider other)
         {
@@ -31,6 +32,7 @@ namespace Thunder.Enemy
         {
             if (!_playerInRange || Time.time < _nextAttack) return;
             _playerData.health.Value -= damage;
+            if (attackSound != null) attackSound.Play();
             _nextAttack = Time.time + delay;
         }
     }

@@ -10,6 +10,7 @@ namespace Thunder.Player
         public Health health;
         public Rigidbody rb;
         public Behaviour[] disables;
+        public AudioSource deathSound;
 
         void Awake()
         {
@@ -26,6 +27,7 @@ namespace Thunder.Player
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForceAtPosition(Vector3.one * 288, -Vector3.down);
             disables.ForEach((b, i) => b.enabled = false);
+            deathSound.Play();
             StartCoroutine(Restart());
         }
 

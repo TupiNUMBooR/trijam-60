@@ -16,6 +16,7 @@ namespace Thunder.Player
         public Transform from;
         Ray _shootRay;
         RaycastHit _hit;
+        public AudioSource shootSound;
 
         void Awake()
         {
@@ -33,6 +34,7 @@ namespace Thunder.Player
             if (Time.time < _lastAttack + delay) return;
             _lastAttack = Time.time;
             var pos = from.position;
+            shootSound.Play();
 
             gunLine.enabled = true;
             gunLine.SetPosition(0, pos);
