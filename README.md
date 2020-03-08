@@ -1,4 +1,4 @@
-#Half-Vision
+# Half-Vision
 
 Survive in deadly labyrinth!
 Shoot as many shadows as you can.
