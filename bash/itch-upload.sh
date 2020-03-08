@@ -9,13 +9,16 @@ fi
 
 read -p "work with \"$basic\"?"
 
-while getopts "wl" o; do
+while getopts "wlh" o; do
   case $o in
   w)
     $itch_butler push "$basic/Windows64" "$itch_target:win-x64"
     ;;
   l)
     $itch_butler push "$basic/Linux64" "$itch_target:linux-x64"
+    ;;
+  h)
+    $itch_butler push "$basic/WebGL" "$itch_target:web"
     ;;
   esac
 done
