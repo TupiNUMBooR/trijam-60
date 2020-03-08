@@ -1,20 +1,18 @@
 using UnityEngine;
-using Utils.GameObject;
 using Utils.Properties.Vector;
 
 namespace Thunder.Player
 {
-    [RequireComponent(typeof(Rigidbody))]
-    public class RigidbodyVector2Movement : Modifier<Rigidbody>
+    public class RigidbodyVector2Movement : MonoBehaviour
     {
         public Vector2Property control;
         public int floorLayer;
         int floorMask;
         public float speed = 1;
+        public Rigidbody rb;
 
-        protected override void Awake()
+        void Awake()
         {
-            base.Awake();
             floorMask = 1 << floorLayer;
         }
 
@@ -32,14 +30,14 @@ namespace Thunder.Player
             {
                 Vector3 playerToMouse = floorHit.point - transform.position;
                 playerToMouse.y = 0;
-                target.MoveRotation(Quaternion.LookRotation(playerToMouse));
+                rb.MoveRotation(Quaternion.LookRotation(playerToMouse));
             }
         }
 
         void Move()
         {
             var move = new Vector3(control.Value.x, 0 , control.Value.y);
-            target.MovePosition(target.position + Time.deltaTime * speed * move);
+            rb.MovePosition(rb.position + Time.deltaTime * speed * move);
         }
     }
 }

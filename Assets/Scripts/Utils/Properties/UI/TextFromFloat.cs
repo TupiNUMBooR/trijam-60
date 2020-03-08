@@ -13,7 +13,6 @@ namespace Utils.Properties.UI
 
         void Start()
         {
-            base.Awake();
             floatProperty.ChangeEvent += OnChange;
             OnChange();
         }

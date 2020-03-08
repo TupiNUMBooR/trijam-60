@@ -4,8 +4,7 @@ namespace Thunder.Enemy
 {
     public class EnemyAttack : MonoBehaviour
     {
-        public Health playerHealth;
-        public Collider playerCollider;
+        PlayerData _playerData;
         bool _playerInRange;
         public float delay = 1;
         float _nextAttack;
@@ -13,24 +12,25 @@ namespace Thunder.Enemy
 
         void OnTriggerEnter(Collider other)
         {
-            if (other != playerCollider) return;
-            print("enter");
+            var pd = other.GetComponent<PlayerData>();
+            if (pd == null) return;
             _playerInRange = true;
+            _playerData = pd;
         }
-
 
         void OnTriggerExit(Collider other)
         {
-            if (other != playerCollider) return;
-            print("exit");
-            _playerInRange = true;
+            var pd = other.GetComponent<PlayerData>();
+            if (pd == null) return;
+            _playerInRange = false;
+            _playerData = null;
         }
 
 
         void FixedUpdate()
         {
             if (!_playerInRange || Time.time < _nextAttack) return;
-            playerHealth.property.Value -= damage;
+            _playerData.health.Value -= damage;
             _nextAttack = Time.time + delay;
         }
     }
