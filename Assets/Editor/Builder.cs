@@ -12,6 +12,12 @@ namespace Editor
             Build("Linux64", BuildTarget.StandaloneLinux64, false);
             Build("WebGL", BuildTarget.WebGL, false);
         }
+        
+        public static void BuildPC()
+        {
+            Build("Windows64", BuildTarget.StandaloneWindows64, false);
+            Build("Linux64", BuildTarget.StandaloneLinux64, false);
+        }
 
         static void Build(string platform, BuildTarget bt, bool dev)
         {

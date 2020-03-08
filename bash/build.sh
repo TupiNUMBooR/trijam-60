@@ -11,7 +11,7 @@ build-one() {
 }
 
 git status
-[ ! -z "$(git status --porcelain)" ] && exit 1
+#[ ! -z "$(git status --porcelain)" ] && exit 1
 
 echo -e "\e[36m========== Building basic ==========\e[0m"
 read -p "continue?"
