@@ -6,14 +6,14 @@ They hurt you if they touch you.
 They are invisible, so you have to switch the light to see them.
 But without light you don't see walls, and they hurt too.
 
-Shoot on mouse **left button**, move on **wsad**.
-Press **E** to switch vision.
+Shoot on **mouse left button**, move on **wsad**.
+Press **E**/**​Space**​/**mouse ​right button**​ to switch vision.
 
 Enemies slowly grow in numbers - also switching the light make them stronger!
 Share your best score!
 
 This game was made in 3 hours for [trijam-60](https://itch.io/jam/trijam-60).
-I had a lot of plans, but it is my first game for trijam, so i made only what i managed to.
+I had a lot of plans, but it is my first game in 3 hours, so i made only what i managed to.
 Most time i wrote scripts.
 There are no textures or 3d models in this game, except unity build-in capsules, boxes and etc.
 I made music in my last 20 minutes with [BeepBox](https://www.beepbox.co/) and [Bfxr](https://www.bfxr.net) sites.

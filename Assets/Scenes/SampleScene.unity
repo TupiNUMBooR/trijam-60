@@ -4284,7 +4284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63541b63a64c43c0842ec69d0ca78a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 0.5
+  period: 1
   periodMultiplier: 0.99
 --- !u!114 &1665682635
 MonoBehaviour:
